@@ -62,12 +62,14 @@ void draw(){
       Virus vr = virus.get(i);
       Bacterium bc = bacterium.get(j);   
       if(bc.canBeEatenBy(vr)){      
-        bacterium.remove(bc);       
+        bacterium.remove(bc);
+        j--;
           if ((state==CHERRY) && (bacterium.size()==0)){
             gameOver = true;         
         }   
         else if (state==POWERUP){        
-          virus.remove(vr); 
+          virus.remove(vr);
+          i--;
           score++;
           
           }
